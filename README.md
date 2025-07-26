@@ -69,18 +69,36 @@ These are partly repeating since Catppuccin is not providing the full 50-900 ran
 The following might be messy, but oh well. It works.
 It should be pasted into a new theme component, which is then added to the newly created theme (derived from the Air theme).
 
-```css
+```scss
 #reply-control::before,.chat-drawer-container::before {
 backdrop-filter:blur(10px);
 background-color:#18182580;
-content:'';
+content:"";
 inset:0;
 position:absolute;
 z-index:-1
 }
 
-#topic-footer-buttons > div.topic-footer-main-buttons > button > span,button > span,.controls > ul > li > .chat-direct-message-btn > span,.controls > ul > li > .compose-pm > span,.save-changes > .d-button-label,button.btn.btn-text.btn-primary.btn-small.sign-up-button > span,button.btn.btn-icon-text.btn-primary.btn-small.login-button > span {
+div.admin-footer > div.buttons > button > span,button.btn.btn-icon-text.btn-primary.create > span,#topic-footer-buttons > div.topic-footer-main-buttons > button > span,.controls > ul > li > .chat-direct-message-btn > span,.controls > ul > li > .compose-pm > span,.save-changes > .d-button-label,button.btn.btn-text.btn-primary.btn-small.sign-up-button > span,button.btn.btn-icon-text.btn-primary.btn-small.login-button
+> span.d-button-label
+> span {
 color:#1e1e2e
+}
+
+.d-page-header__actions > button > span,.btn-icon.ok > svg {
+color:#1e1e2e!important
+}
+
+div.user-controls > button > span,div.controls > button > span,div.controls > div > button > span,div.controls > a > span,.topic-footer-main-buttons__actions > button > span,.reason > button,.template-topic-controls > button > span > span {
+color:var(--d-button-default-text-color)!important
+}
+
+div.controls > .btn-danger > span {
+color:#1e1e2e!important
+}
+
+.reactions-counter {
+color:var(--primary-medium)!important
 }
 
 #topic-progress-wrapper #topic-progress,#topic-progress-wrapper .btn {
@@ -97,7 +115,24 @@ background-color:var(--primary-low);
 border:unset
 }
 
-.archetype-private_message .topic-body .contents.regular,#list-area .show-more .alert,input[type=text],input[type=password],input[type=datetime],input[type=datetime-local],input[type=date],input[type=month],input[type=time],input[type=week],input[type=number],input[type=email],input[type=url],input[type=search],input[type=tel],input[type=color],.select-kit.combo-box .select-kit-header,.d-editor-textarea-wrapper,div.ac-wrap,.fk-d-menu__inner-content,.full-width .contents .topic-list .topic-list-header .topic-list-data.posts,.full-width .contents .topic-list .topic-list-header .topic-list-data.activity,.archetype-private_message .topic-map .participants .user,.user-menu .quick-access-panel li:not(.show-all),.user-notifications-list li:not(.show-all),.chat-composer__inner-container,.chat-message-actions,.select-kit.single-select.dropdown-select-box.is-expanded .select-kit-collection,.select-kit.single-select.dropdown-select-box.is-expanded .select-kit-body,pre > code,aside.onebox,.badge-card,.sidebar-section-link-wrapper,.new-user-wrapper .user-navigation .nav-pills li a,.desktop-view .archetype-private_message .regular.contents,.chat-drawer.is-expanded .chat-drawer-container,.user-menu.revamped #quick-access-profile li,.card-cloak,#topic-progress-wrapper #topic-progress .bg,#topic-progress-wrapper #topic-progress,.user-menu .quick-access-panel .read,.user-notifications-list .read,.user-menu.revamped .tabs-list .btn,.user-menu.revamped .tabs-list .d-modal.json-schema-editor-modal .je-ready .json-editor-btn-add,.d-modal.json-schema-editor-modal .je-ready .user-menu.revamped .tabs-list .json-editor-btn-add,.user-menu.revamped .tabs-list .d-modal.json-schema-editor-modal .je-ready button,.d-modal.json-schema-editor-modal .je-ready .user-menu.revamped .tabs-list button,.sidebar-section-link-wrapper .sidebar-section-link,.d-modal.-max .d-modal__container {
+.archetype-private_message .topic-body .contents.regular,#list-area .show-more .alert,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.select-kit.combo-box .select-kit-header,.d-editor-textarea-wrapper,div.ac-wrap,.fk-d-menu__inner-content,.full-width .contents .topic-list .topic-list-header .topic-list-data.posts,.full-width .contents .topic-list .topic-list-header .topic-list-data.activity,.archetype-private_message .topic-map .participants .user,.user-menu .quick-access-panel li:not(.show-all),.user-notifications-list li:not(.show-all),.chat-composer__inner-container,.chat-message-actions,.select-kit.single-select.dropdown-select-box.is-expanded
+.select-kit-collection,.select-kit.single-select.dropdown-select-box.is-expanded .select-kit-body,pre > code,aside.onebox,.badge-card,.sidebar-section-link-wrapper,.new-user-wrapper .user-navigation .nav-pills li a,.desktop-view .archetype-private_message .regular.contents,.chat-drawer.is-expanded .chat-drawer-container,.user-menu.revamped #quick-access-profile li,.card-cloak,#topic-progress-wrapper #topic-progress .bg,#topic-progress-wrapper #topic-progress,.user-menu .quick-access-panel .read,.user-notifications-list .read,.user-menu.revamped .tabs-list .btn,.user-menu.revamped
+.tabs-list
+.d-modal.json-schema-editor-modal
+.je-ready
+.json-editor-btn-add,.d-modal.json-schema-editor-modal
+.je-ready
+.user-menu.revamped
+.tabs-list
+.json-editor-btn-add,.user-menu.revamped
+.tabs-list
+.d-modal.json-schema-editor-modal
+.je-ready
+button,.d-modal.json-schema-editor-modal
+.je-ready
+.user-menu.revamped
+.tabs-list
+button,.sidebar-section-link-wrapper .sidebar-section-link,.d-modal.-max .d-modal__container {
 border-radius:8px
 }
 
@@ -107,7 +142,23 @@ border:none;
 border-radius:8px
 }
 
-.chat-message-actions .chat-message-reaction:not(.reacted):hover,.menu-panel .panel-body-bottom .btn,.menu-panel .panel-body-bottom .d-modal.json-schema-editor-modal .je-ready .json-editor-btn-add,.d-modal.json-schema-editor-modal .je-ready .menu-panel .panel-body-bottom .json-editor-btn-add,.menu-panel .panel-body-bottom .d-modal.json-schema-editor-modal .je-ready button,.d-modal.json-schema-editor-modal .je-ready .menu-panel .panel-body-bottom button,.shortcut-category h2,.admin-site-settings-filter-controls .controls,.admin-site-settings-filter-controls .search.controls,.admin-site-settings-filter-controls,.d-admin-filter {
+.chat-message-actions .chat-message-reaction:not(.reacted):hover,.menu-panel .panel-body-bottom .btn,.menu-panel
+.panel-body-bottom
+.d-modal.json-schema-editor-modal
+.je-ready
+.json-editor-btn-add,.d-modal.json-schema-editor-modal
+.je-ready
+.menu-panel
+.panel-body-bottom
+.json-editor-btn-add,.menu-panel
+.panel-body-bottom
+.d-modal.json-schema-editor-modal
+.je-ready
+button,.d-modal.json-schema-editor-modal
+.je-ready
+.menu-panel
+.panel-body-bottom
+button,.shortcut-category h2,.admin-site-settings-filter-controls .controls,.admin-site-settings-filter-controls .search.controls,.admin-site-settings-filter-controls,.d-admin-filter {
 background-color:var(--primary-low)
 }
 
@@ -115,18 +166,29 @@ background-color:var(--primary-low)
 background-color:unset
 }
 
-.chat-message-separator-date .chat-message-separator__text-container.is-pinned .chat-message-separator__text,.chat-message-separator-date .chat-message-separator__text-container.is-force-pinned .chat-message-separator__text {
+.chat-message-separator-date
+.chat-message-separator__text-container.is-pinned
+.chat-message-separator__text,.chat-message-separator-date
+.chat-message-separator__text-container.is-force-pinned
+.chat-message-separator__text {
 background-color:var(--primary-low);
 border-color:var(--primary-low);
 border-radius:8px;
 color:var(--primary)
 }
 
-.custom-category-boxes:not(.above-discovery-categories-outlet) .category-box .category-box-inner .category-logo.no-logo-present {
+.custom-category-boxes:not(.above-discovery-categories-outlet)
+.category-box
+.category-box-inner
+.category-logo.no-logo-present {
 background-color:var(--primary-low)!important
 }
 
-.custom-category-boxes:not(.above-discovery-categories-outlet) h3,.custom-category-boxes:not(.above-discovery-categories-outlet) .category-box .category-box-inner .category-logo.no-logo-present .category-abbreviation {
+.custom-category-boxes:not(.above-discovery-categories-outlet) h3,.custom-category-boxes:not(.above-discovery-categories-outlet)
+.category-box
+.category-box-inner
+.category-logo.no-logo-present
+.category-abbreviation,div.poll-container > ul > li > button > span {
 color:var(--primary-active)
 }
 
@@ -138,7 +200,7 @@ color:var(--header_primary)
 color:var(--tertiary)
 }
 
-.d-button-label,nav.post-controls .actions a,nav.post-controls .actions button,.btn-flat .d-icon,.json-editor-btn-collapse .d-icon,.d-modal.json-schema-editor-modal .je-ready .json-editor-btn-collapse .d-icon {
+nav.post-controls .actions a,nav.post-controls .actions button,.btn-flat .d-icon,.json-editor-btn-collapse .d-icon,.d-modal.json-schema-editor-modal .je-ready .json-editor-btn-collapse .d-icon {
 color:var(--primary-medium)
 }
 
@@ -159,7 +221,12 @@ background-color:var(--secondary)
 font-size:var(--font-up-1)
 }
 
-.full-width .contents .topic-list .topic-list-body .topic-list-item .topic-list-data.posters {
+.full-width
+.contents
+.topic-list
+.topic-list-body
+.topic-list-item
+.topic-list-data.posters {
 width:10%
 }
 
@@ -212,7 +279,33 @@ border:none;
 border-radius:8px
 }
 
-.timeline-container .topic-timeline .start-date,.names .new_user a,.names .user-title,.names .user-title a,.topic-body .reply-to-tab,.topic-meta-data .post-info a,nav.post-controls .actions button.create,.discourse-no-touch .sidebar-section-wrapper .sidebar-section-header-wrapper .btn.dropdown-select-box-header,.discourse-no-touch .sidebar-section-wrapper .sidebar-section-header-wrapper .d-modal.json-schema-editor-modal .je-ready .dropdown-select-box-header.json-editor-btn-add,.d-modal.json-schema-editor-modal .je-ready .discourse-no-touch .sidebar-section-wrapper .sidebar-section-header-wrapper .dropdown-select-box-header.json-editor-btn-add,.discourse-no-touch .sidebar-section-wrapper .sidebar-section-header-wrapper .d-modal.json-schema-editor-modal .je-ready button.dropdown-select-box-header,.d-modal.json-schema-editor-modal .je-ready .discourse-no-touch .sidebar-section-wrapper .sidebar-section-header-wrapper button.dropdown-select-box-header,.discourse-no-touch .sidebar-section-wrapper .sidebar-section-header-wrapper .sidebar-section-header-button {
+.timeline-container .topic-timeline .start-date,.names .new_user a,.names .user-title,.names .user-title a,.topic-body .reply-to-tab,.topic-meta-data .post-info a,nav.post-controls .actions button.create,.discourse-no-touch
+.sidebar-section-wrapper
+.sidebar-section-header-wrapper
+.btn.dropdown-select-box-header,.discourse-no-touch
+.sidebar-section-wrapper
+.sidebar-section-header-wrapper
+.d-modal.json-schema-editor-modal
+.je-ready
+.dropdown-select-box-header.json-editor-btn-add,.d-modal.json-schema-editor-modal
+.je-ready
+.discourse-no-touch
+.sidebar-section-wrapper
+.sidebar-section-header-wrapper
+.dropdown-select-box-header.json-editor-btn-add,.discourse-no-touch
+.sidebar-section-wrapper
+.sidebar-section-header-wrapper
+.d-modal.json-schema-editor-modal
+.je-ready
+button.dropdown-select-box-header,.d-modal.json-schema-editor-modal
+.je-ready
+.discourse-no-touch
+.sidebar-section-wrapper
+.sidebar-section-header-wrapper
+button.dropdown-select-box-header,.discourse-no-touch
+.sidebar-section-wrapper
+.sidebar-section-header-wrapper
+.sidebar-section-header-button {
 border-radius:8px;
 color:var(--primary-medium)
 }
@@ -301,7 +394,7 @@ This one needs to go into the custom theme components "Header" section.
 ~~~
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="https://unpkg.com/@catppuccin/highlightjs@1.0.0/css/catppuccin-mocha.css">
+<link rel="stylesheet" href="//unpkg.com/@catppuccin/highlightjs@1.0.1/css/catppuccin-mocha.css">
 ~~~
 
 ## Recommendations
